@@ -128,27 +128,16 @@ class LmsSystem {
       throw Exception("Result already exists for student $studentId in course $courseId");
     }
 
-    final result = Result(
-      studentId: studentId,
-      courseId: courseId,
-      score: score,
-    );
-
+    final result = Result(studentId: studentId, courseId: courseId, score: score);
     results.add(result);
   }
 
-  void removeResult({
-    required String studentId,
-    required String courseId,
-  }) {
+  void removeResult({required String studentId, required String courseId}) {
     final result = _findResultOrNull(studentId, courseId);
 
     if (result == null) {
       throw Exception("Result not found for student $studentId in course $courseId");
     }
-
-    results.remove(result);
-
     results.remove(result);
   }
 
